@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/main.css ">
+  <link rel="stylesheet" href="styles/modern-normalize.css ">
+  <link rel="stylesheet" href="styles/style.css ">
+  <link rel="stylesheet" href="styles/utils.css ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sign-up form start -->
+  <div class="main-wrapper ">
+    <div class="img_wrapper" >
+      <img class="main_Mimg" src="assets\images\illustration-sign-up-mobile.svg" alt="">
+      <img class="main_Dimg" src="assets\images\illustration-sign-up-desktop.svg" alt="">
+    </div>
+
+    <main class="main">
+    <div class="info ">
+
+      <h1 class="info_h1">Stay updated!</h1>
+
+      <p class="info_p">Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul class="info_ul">
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+    </div>
+
+
+    <div class="legend">
+
+      <span class="legend_span">Email address</span> <span class="legend_error">Valid email required</span>
+
+     <form action="thanks.html" class="legend_form">
+      <input type="email" class="legend_input" spellcheck="false" placeholder="email@company.com"  oninvalid="setCustomValidity('opss')" required>
+
+      <button  class="btn">Subscribe to monthly newsletter</button>
+    </form>
+      
+    </div>
+  </main>
+
+  </div>
+
+  <!-- Sign-up form end -->
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">AyubGM</a>.
+  </div> 
+
+<!--Commented out because I was using vite-->
+  <!--<script type="module" src="./src/main.js"></script>-->
+
+
+  <script >
+  
+  const legend_input = document.querySelector('.legend_input');
+const legend_error = document.querySelector('.legend_error');
+const legend_form = document.querySelector('.legend_form');
+const btn = document.querySelector('.btn');
+
+
+btn.addEventListener('click', () => {
+
+  if(!legend_input.value.match((/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))){
+
+    legend_error.style.display= "inline";
+    legend_input.style.borderColor= " red";
+    legend_input.style.background= "var(--clr-red)";
+    return false;
+    console.log("btn");
+
+
+
+  } else {
+    return true
+  }
+
+
+
+});
+</script>
+  
+
+</body>
+
+</html>
